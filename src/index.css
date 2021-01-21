@@ -41,3 +41,22 @@
   margin: 40px auto; /* top/bottom  and right/left */
   padding: 20px;
 }
+
+/* blog previews / list */
+.blog-preview {
+  padding: 10px 15px;
+  margin: 20px 0;
+  border-radius: 1px solid #fafafa;
+}
+
+.blog-preview:hover {
+  box-shadow: 1px 5px 9px rgba(0, 0, 0, 0.1);
+  background-color: rgb(201, 241, 247);
+}
+
+.blog-preview h2 {
+  font-size: 20px;
+  /* color: #f1356d; */
+  color: darkblue;
+  margin-bottom: 8px;
+}
