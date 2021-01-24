@@ -10,10 +10,17 @@ const Home = () => {
       { title: "Some othee website", body: "Kidda Bhai?", author: "Bhai Saab", id: 4 }
    ]);
 
+
+   const handleDelete = (id) => {
+      const newBlogs = blogs.filter(blog => blog.id !== id);
+      setBlogs(newBlogs);
+   }
+
+
    return (
       <div className="home">
-         <BlogList blogs={ blogs } title="My NEW Blog" />
-         <BlogList blogs={ blogs.filter((blog) => blog.author === "Bhai Saab") } title="Bhai Saab's Blogs" />
+         <BlogList blogs={ blogs } title="My NEW Blog" handleDelete={handleDelete} 
+         />
       </div>
    );
 }
