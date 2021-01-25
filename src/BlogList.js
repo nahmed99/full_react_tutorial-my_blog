@@ -4,7 +4,7 @@
 //    const title = kiddas.title
 
 // Destructuring, i.e., NOT using props - using {} instead for the destructured data
-const BlogList = ({ blogs, title, handleDelete }) => {
+const BlogList = ({ blogs, title }) => {
 
 
    return ( 
@@ -15,7 +15,6 @@ const BlogList = ({ blogs, title, handleDelete }) => {
                <div className="blog-preview" key={ blog.id }>
                   <h2>{ blog.title }</h2>
                   <p>Written by { blog.author }</p>
-                  <button onClick={() => handleDelete(blog.id)}>&#xf014;</button>
                </div>
             )
          })}
