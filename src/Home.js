@@ -8,6 +8,8 @@ const Home = () => {
    // state (of a useStaet variable)...
    const [blogs, setBlogs] = useState(null);
 
+   const [isPending, setIsPending] = useState(true);
+
    const [name, setName] = useState('Kidda?');
 
 
@@ -22,6 +24,7 @@ const Home = () => {
       })
       .then((data) => {
          setBlogs(data); // This won't cause an indefinite loop, due to the empty dependency array below.
+         setIsPending(false);
       })
    }, []); 
    // useEffect dependency array - to control when it runs, after re-render.
@@ -36,6 +39,9 @@ const Home = () => {
 
    return (
       <div className="home">
+
+         {isPending && <div><h1>Loading...</h1></div>}
+
          {/* The && is used to ensure that blogs contains data 
              before BlogList is rendered */}
          { blogs && <BlogList blogs={ blogs } title="My NEW Blog" /> }
